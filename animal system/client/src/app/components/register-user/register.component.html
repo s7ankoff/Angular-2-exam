@@ -1,0 +1,49 @@
+<h2>Register User</h2>
+
+
+<form #registerForm="ngForm" (submit)="register()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" 
+    id="name"
+     required 
+     name="name"
+      #name="ngModel"
+      [(ngModel)]="user.name" />
+      <span [hidden]="name.valid || name.pristine">  Name is reuired!</span>
+  </div>
+
+  <div class="form-group">
+    <label for="e-mail">E-mail</label>
+    <input type="text" class="form-control" 
+    id="e-mail" 
+    required 
+    name="email" 
+   #email="ngModel"
+    [(ngModel)]="user.email" />
+     <span [hidden]="email.valid || email.pristine">  E-mail is reuired!</span>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" 
+    id="password" required 
+    name="password"
+    #password="ngModel"
+     [(ngModel)]="user.password" />
+          <span [hidden]="password.valid || password.pristine"> Password is reuired!</span>
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" class="form-control" 
+    id="confirmPassword" 
+    required 
+    name="confirmPassword" 
+    #confirmPassword="ngModel"
+    [(ngModel)]="user.confirmPassword" />
+     <span [hidden]="password.value === confirmPassword.value || confirmPassword.pristine"> Passwords do not match!</span>
+  </div>
+
+
+  <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Submit</button>
+
+</form>

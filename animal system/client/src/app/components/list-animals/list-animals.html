@@ -1,0 +1,36 @@
+<div>
+  <h2>Animals</h2>
+  <div>
+    <input type="text" name="searchText" [(ngModel)]="searchText">
+    <button class="btn btn-info btn-sm" (click)="animalsearch()">Search</button>
+  </div>
+  <div *ngIf="animals.length===0">
+    No more animals available
+  </div>
+  <div class="animals-container">
+    <div class="animal" *ngFor="let animal of animals">
+      <div>
+      <h4>Name:{{animal.name}} </h4>
+      <h4>Type:{{animal.type}} </h4>
+      <h4>Price:{{animal.price}} </h4>
+      <!-- <h4>Age:{{animal.age}} </h4>
+      <h4 *ngIf="animal.breed">Breed:{{animal.breed}} </h4> -->
+      </div>
+  
+      <div>
+        <img [src]="animal.image" alt="">
+      </div>
+      <div class="animal-info-button">
+          <button class="btn btn-primary"
+           routerLink="/animals/details/{{animal.id}}"
+           [disabled]="!authenicated">more details</button>
+          
+      </div>
+    </div>
+    
+  </div>
+  <div>
+    <button class="btn btn-info" [disabled]="page===1" (click)="prevPage()">Prev</button>
+    <button class="btn btn-info" [disabled]="animals.length===0 || animals.length < 10" (click)="nextPage()">Next</button>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+a{
+  padding: 10px
+}
+.form-group input{
+
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-group select{
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+  font-size: 15px;
+}
+.animals-container{
+  padding-top: 50px;
+  margin-left: 32%;
+  margin-right: 50%;
+}
+.animal{
+  display: flex;
+  direction:row;
+}
+.animal div{
+  text-align: left;
+  vertical-align: text-top;
+}
+.animals-container img{
+  padding-left: 15px;
+  width: 250px;
+  padding-top: 15px;
+}
+.animals-container div{
+    margin-bottom: 50px;
+}
+.animal-info-button{
+  margin-top: 14px;
+  margin-left: 10px;
+}
+.animal-img-details{
+  width: 300px;
+}
+.form-control{
+  resize: none;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.author{
+ color: black
+}
+.delete-animal{
+  margin-top: 8px;
+}
+.comments{
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  border-radius: 15px;
+  border: 2px solid #04519b;
+  background-color: #E8EFF5;
+  margin-bottom: 5px;
+}
+.comment-by{
+  font-size: 20px;
+  font-weight: bold;
+ 
+}
+.comment{
+  font-size: 18px;
+
+}

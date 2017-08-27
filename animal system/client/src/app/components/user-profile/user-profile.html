@@ -1,0 +1,12 @@
+<h1 *ngIf="animals.length==0">You have no animals</h1>
+<h1 *ngIf="animals.length>0"> My Animals</h1>
+
+<div *ngFor="let animal of animals">
+
+  <h4>Name:{{animal.name}}</h4>
+  <img [src]="animal.image" alt="" style=width:150px>
+
+  <div class="delete-animal">
+      <button class="btn btn-warning" (click)="deleteAnimal(animal.id)">Delete</button>
+  </div>
+</div>

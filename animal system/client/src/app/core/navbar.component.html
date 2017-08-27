@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <div *ngIf="isAthenticated">
+        <ul class="nav navbar-nav">
+          <li><a routerLink='/stats'>Statistics</a></li>
+          <li><a routerLink='/animals/all'>All Animals</a></li>
+          <li><a routerLink='/animals/mine'>{{username}}'s profile</a></li>
+          <li><a routerLink='/animals/add'>Add Animal</a></li>
+          <li><a routerLink='/' (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+      <div *ngIf="!isAthenticated">
+        <ul class="nav navbar-nav">
+          <li><a routerLink='/stats'>Statistics</a></li>
+          <li><a routerLink='/animals/all'>All Animals</a></li>
+          <li><a routerLink='/users/register'>Register</a></li>
+          <li> <a routerLink='/users/login'>Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

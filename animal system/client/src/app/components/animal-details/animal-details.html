@@ -1,0 +1,57 @@
+<div>
+    <h2>{{animal.name}}</h2>
+    <img class="animal-img-details" [src]="animal.image" alt="">
+    <h4 *ngIf="animal.reactions">
+        Likes:{{animal.reactions.like}} 
+        haha:{{animal.reactions.haha}}
+        love:{{animal.reactions.love}}
+        angry:{{animal.reactions.angry}}
+        sad:{{animal.reactions.sad}}
+        wow:{{animal.reactions.wow}}
+    </h4>
+    <h4>Type:{{animal.type}}</h4>
+    <h4>Age:{{animal.age}}</h4>
+    <h4>Color:{{animal.color}}</h4>
+    <h4 *ngIf="animal.breed">Breed:{{animal.breed}}</h4>
+    <h4>Price:{{animal.price}}</h4>
+
+    <div class="form-group">
+
+
+        <select class="form-control"
+         id="reaction"
+         name="selecteRreaction"
+         #selectedReaction="ngModel" 
+        [(ngModel)]="reaction.type">
+           <option *ngFor="let reaction of reactions"
+                    [value]="reaction">{{reaction}}</option>
+        </select>
+
+    </div>
+    <button type="button" class="btn btn-success" (click)="react()">React</button>
+</div>
+<div>
+   
+        <h3 class="black">Add Comment</h3>
+
+        <div >
+            <textarea class="form-control " rows="3"
+            id="comment"
+            name="newComment"
+            #newComment="ngModel"
+            [(ngModel)]="comment.message"
+            [value]="comment"
+            ></textarea>
+        </div>
+</div>
+<br>
+<button type="button" class="btn btn-info" (click)="addComment()">Submit comment</button>
+<hr>
+<h3 class="black">Comments</h3>
+<div class="comments" *ngFor="let comment of comments">
+
+    <p ><span  class="author"> Author :</span><span class="comment-by">  {{comment.user}}</span> </p>
+
+    <p><span class="comment">{{comment.message}}</span></p>
+  
+</div>
