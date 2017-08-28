@@ -56,7 +56,7 @@ export class RegisterComponent {
       })
   }
   emailValidation() {
-    const validator = new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$')
-    return validator.test(this.user.email)
+    const emailValidator = new RegExp('^[^\s@]+@[^\s@]+\.[^\s@]+$')
+    return emailValidator.test(this.user.email)
   }
 }
